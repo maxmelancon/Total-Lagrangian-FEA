@@ -149,7 +149,7 @@ local_num_force_nodes = len(force_dofs)
 global_num_force_nodes = domain.comm.allreduce(local_num_force_nodes, op=MPI.SUM)
 
 # Calculate Force Per Node (Matching C++ explicit: +10000 N in +z)
-total_force = 10000.0
+total_force = 5000.0
 force_per_node = total_force / global_num_force_nodes if global_num_force_nodes > 0 else 0.0
 
 if rank == 0:
